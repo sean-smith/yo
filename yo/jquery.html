@@ -1,0 +1,86 @@
+<html>
+<head>
+<link href="css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+
+<button id="button1" class="btn btn-default" data-panel="button1">button!!!!!!</button>
+
+<div id="div1" class="col-xs-3">
+	<div id="panel1" class="panel panel-primary">
+		<div class="panel-heading" id="panel1-heading">
+			Some Heading
+		<div class="panel-body">
+			Body Text
+		</div>
+	</div>
+
+</div>
+<div id="div1" class="col-xs-3">
+	<div id="panel1" class="panel panel-primary">
+		<div class="panel-heading" id="panel1-heading">
+			Some Heading
+		<div class="panel-body">
+			Body Text
+		</div>
+	</div>
+
+</div>
+<div id="div1" class="col-xs-3">
+	<div id="panel1" class="panel panel-primary">
+		<div class="panel-heading" id="panel1-heading">
+			Some Heading
+		<div class="panel-body">
+			Body Text
+		</div>
+	</div>
+
+</div>
+
+<div class="alert alert-success" role="alert" style="display:none" id="alert1">
+  This is a successful alert
+</div>
+
+
+<script src="jquery-2.1.1.js" ></script>
+
+<script>
+$(document).ready(function() {
+	$('#alert1').hide().delay(2000);
+	$('#panel1').hide(1000).show(3000).fadeToggle(1000);
+	$('#panel1').slideUp(3000).toggle().show();
+	$("#alert1").slideDown(300);
+	$('#button1').html("button1");
+	$("button[data-panel=button1]").on('click', function(){
+		$("#button1").toggle();
+	});
+	$("#button1").on('click', function(){
+		$('#panel1 .panel-body').html("my new content");
+
+
+	});
+	$("#button1").on ("mouseover", function(){
+		$('#panel1').slideToggle(200);
+	});
+	$('#panel1-heading').hide().css({
+		color:"red",
+		opacity:'0.5'
+
+
+	}).show();
+
+	$('.panel').on('click', function(){
+		var id = $(this).attr('data-panelid');
+		$('#'+id).toggle();
+
+	});
+
+
+});
+
+</script>
+<body>
+
+
+</html>
