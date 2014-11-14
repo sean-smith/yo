@@ -1,4 +1,4 @@
-yo
+Yo
 ==
 
 A simple yo app that allows you to send a Yo to anyone.
