@@ -7,38 +7,32 @@
     <title>Yo</title>
 
     <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="main.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
 
   </head>
   <body>
     <div class="col-md-3 col-md-offset-4">
     <h1 class="text-center header">Yo</h1>
 
-    <form id="yo" role="form">
+    <form id="yo_form" role="form" method="POST" action="/yo">
       <div class="form-group">
-        <input id="username" type="text" class="form-control" placeholder="It's that simple"></input>
+        <input id="username" type="text" class="form-control" placeholder="Enter a Username"></input>
+    </div>
+    <div class="form-group">
+        <input id="url" type="url" class="form-control" placeholder="Enter a URL"></input>
+    </div>
+    <div class="form-group text-center">
+        <input type="submit" id="yo" class="btn center text-center" value="Yo"></input>
       </div>
     </form>
-
+    <div id="subscribers">
+    </div>
     <div id="success">
     </div>
   </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-    <script>
-    $(document).ready(function() {
-      $("#username").keypress(function(event) {
-        if (event.which == 13) {
-          event.preventDefault();
-          $("#yo").hide();
-          username = $("#username").val();
-          $.get( "/yo/"+username, function(data){
-            $("#success").html("<h3 class=\"text-center\">"+data+"</h3>");
-          });
-          }
-        });
-    });
-    </script>
+    <script src="js/main.js"></script>
   </body>
 </html>
