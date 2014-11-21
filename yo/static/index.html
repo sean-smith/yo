@@ -11,7 +11,9 @@
 
   </head>
   <body>
-    <div class="col-md-3 col-md-offset-4">
+      <div class="container-fluid">
+<div class="row">
+    <div class="col-xs-6 col-xs-offset-3">
     <h1 class="text-center header">Yo</h1>
 
     <form id="yo_form" role="form" method="POST" action="/yo">
@@ -19,16 +21,21 @@
         <input id="username" type="text" class="form-control" placeholder="Enter a Username"></input>
     </div>
     <div class="form-group">
-        <input id="url" type="url" class="form-control" placeholder="Enter a URL"></input>
+        <input id="name" type="text" class="form-control" placeholder="Enter your name (optional):"></input>
+    </div>
+    <div class="form-group">
+        <textarea id="message" type="text" rows="3" class="form-control" placeholder="Type your message:"></textarea>
     </div>
     <div class="form-group text-center">
         <input type="submit" id="yo" class="btn center text-center" value="Yo"></input>
       </div>
     </form>
-    <div id="subscribers">
-    </div>
     <div id="success">
     </div>
+    <div id="subscribers">
+    </div>
+  </div>
+  </div>
   </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
