@@ -1,9 +1,10 @@
     $(document).ready(function() {
-        $.get("/subscriber_count", function(data){
+        /*
+	$.get("/subscriber_count", function(data){
             console.log(data)
             $("#subscribers").html("<h3 class=\"text-center\">"+data+" Subscribers</h3>");
         });
-
+	*/
         $("#yo_form").on("submit", function(event){
             event.preventDefault();
             $("#yo_form").hide();
