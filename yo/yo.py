@@ -1,5 +1,6 @@
 import requests
 from flask import Flask, request, render_template
+import urllib
 
 app = Flask(__name__, static_url_path='')
 
@@ -53,8 +54,13 @@ def yo_message():
     message = request.form["message"]
     name = request.form["name"]
     username = request.form["username"]
-    url = "http://155.41.105.86/yo_message_recieved?message="+message+"&name="+name
+    name = urllib.quote_plus(name)
+    message = urllib.quote_plus(message)
+    ip = "155.41.100.232"
+    url = "http://"+ip+"/yo_message_recieved?message="+message+"&name="+name
     #url = "http://54.148.80.59:81/yo_message_recieved?message="+message+"&name="+name
+    if len(url) >= 2083:
+        return "Message too long. Max length is 2,083 characters"
     try:
         r = send_yo(username, url)
     except:
@@ -72,5 +78,5 @@ def yo_send_recieved():
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
-    #app.run(host="0.0.0.0", port=80)
+    #app.run(debug=True)
+    app.run(debug=True, host="0.0.0.0", port=80)

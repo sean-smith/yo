@@ -1,0 +1,12 @@
+body{
+  background-color: #9B59B6;
+  padding: 10px;
+}
+h1{
+  color: white;
+
+}
+.col-centered{
+    float: none;
+    margin: 0 auto;
+}

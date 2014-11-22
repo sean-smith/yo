@@ -1,21 +1,24 @@
 <!doctype html>
 <title>Yo Message</title>
-<link rel=stylesheet type=text/css href="{{ url_for('static', filename='main.css') }}">
+
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<link rel=stylesheet type=text/css href="{{ url_for('static', filename='bootstrap.css') }}">
-<script src="{{ url_for('static', 'bootstrap.min.js')}}"></script>
+<link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/bootstrap.css') }}">
+<script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/jquery.js') }}"></script>
+<script src="{{ url_for('static', filename='js/message.js') }}"></script>
+<link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/message.css') }}">
+
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <div class="container-fluid">
 <h1> Yo Message </h1>
 <div class="panel panel-default">
-    <div class="panel-body">
-
-{ % if message %}
-    <h1 class="text-center"> Message from {{name}} </h1>
-    <h4><p> {{ message}} </p></h4>
-{ % else % }
-    <h1> Invalid request :(</h1>
+    <div class="panel-body" id="message">
+{% if data['name'] %}
+    <h2 class="text-center"> Message from {{ data['name'] }}</div> </h2>
+{% endif %}
+    <p> {{ data['message'] }} </p>
+    <a href="http://155.41.100.232/?username={{ data['name'] }}" id="reply" type="submit" value="Reply" class="col-centered btn btn-primary text-center">Reply</a>
 </div>
 </div>
 </div>
