@@ -33,6 +33,7 @@ def load_static_first():
 @app.route('/yo', methods=["POST"])
 def send_yo_handler():
     username = request.form["username"]
+    username = username.lower()
     url = request.form["url"]
     status = send_yo(username, url)
     if status != 200:
@@ -52,11 +53,11 @@ def yo_recieved():
 @app.route("/yo_message", methods=["POST"])
 def yo_message():
     message = request.form["message"]
-    name = request.form["name"]
-    username = request.form["username"]
+    name = request.form["name"].lower()
+    username = request.form["username"].lower()
     name = urllib.quote_plus(name)
     message = urllib.quote_plus(message)
-    ip = "155.41.100.232"
+    ip = "185.56.84.38"
     url = "http://"+ip+"/yo_message_recieved?message="+message+"&name="+name
     #url = "http://54.148.80.59:81/yo_message_recieved?message="+message+"&name="+name
     if len(url) >= 2083:
@@ -79,4 +80,4 @@ def yo_send_recieved():
 
 if __name__ == '__main__':
     #app.run(debug=True)
-    app.run(debug=True, host="0.0.0.0", port=80)
+    app.run(host="0.0.0.0", port=80)
