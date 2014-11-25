@@ -5,11 +5,15 @@
             $("#subscribers").html("<h3 class=\"text-center\">"+data+" Subscribers</h3>");
         });
 	*/
-    if(getUrlParameter("username") != ""){
-        $("#username").val(getUrlParameter("username"));
+
+    var username = getUrlParameter("username")
+    var name = getUrlParameter("name")
+
+    if(username != ""){
+        $("#username").val(username);
     }
-    if(getUrlParameter("name") != ""){
-        $("#name").val(getUrlParameter("name"));
+    if(name != ""){
+        $("#name").val(name);
     }
 
     function getUrlParameter(sParam)
