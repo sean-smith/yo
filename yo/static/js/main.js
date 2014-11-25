@@ -8,7 +8,7 @@
     if(getUrlParameter("username") != ""){
         $("#username").val(getUrlParameter("username"));
     }
-    if(getUrlParameter("username") != ""){
+    if(getUrlParameter("name") != ""){
         $("#name").val(getUrlParameter("name"));
     }
 
