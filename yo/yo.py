@@ -20,6 +20,17 @@ def send_yo(username, url='', loc=("", "")):
 def load_static():
     return app.send_static_file("index.html")
 
+
+@app.route('/sent')
+def sent():
+    username = request.args.get("username")
+    if username != None:
+        r = send_yo(username, "http://yomessage.me/?name="+username)
+        return str(r)
+    else:
+        return '500'
+
+
 @app.route('/subscriber_count')
 def first():
     num = requests.get("https://api.justyo.co/subscribers_count?api_token=28a107be-5396-4e25-9760-e951e24893cd")
@@ -78,5 +89,5 @@ def yo_send_recieved():
 
 
 if __name__ == '__main__':
-    #app.run(debug=True)
-    app.run(host="0.0.0.0", port=80)
+    app.run(debug=True)
+    #app.run(host="0.0.0.0", port=80)
