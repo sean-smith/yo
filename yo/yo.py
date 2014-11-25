@@ -26,9 +26,6 @@ def first():
     num = num.json()["result"]
     return str(num)
 
-@app.route('/first_time_user')
-def load_static_first():
-        return app.send_static_file("first.html")
 
 @app.route('/yo', methods=["POST"])
 def send_yo_handler():
