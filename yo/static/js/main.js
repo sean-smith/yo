@@ -8,6 +8,9 @@
     if(getUrlParameter("username") != ""){
         $("#username").val(getUrlParameter("username"));
     }
+    if(getUrlParameter("username") != ""){
+        $("#name").val(getUrlParameter("name"));
+    }
 
     function getUrlParameter(sParam)
     {

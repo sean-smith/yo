@@ -57,8 +57,9 @@ def yo_message():
     username = request.form["username"].lower()
     name = urllib.quote_plus(name)
     message = urllib.quote_plus(message)
+    username_encoded = urllib.quote_plus(username)
     ip = "185.56.84.38"
-    url = "http://"+ip+"/yo_message_recieved?message="+message+"&name="+name
+    url = "http://"+ip+"/yo_message_recieved?message="+message+"&name="+name+"&username="+username_encoded
     #url = "http://54.148.80.59:81/yo_message_recieved?message="+message+"&name="+name
     if len(url) >= 2083:
         return "Message too long. Max length is 2,083 characters"
@@ -75,7 +76,8 @@ def yo_message():
 def yo_send_recieved():
     message = request.args.get("message")
     name = request.args.get("name")
-    return render_template("message.html", data={"message": message, "name": name})
+    username = request.args.get("username")
+    return render_template("message.html", data={"message": message, "name": name, "username": username})
 
 
 if __name__ == '__main__':
