@@ -6,14 +6,15 @@
         });
 	*/
 
-    var username = getUrlParameter("username")
-    var name = getUrlParameter("name")
+    var username = getUrlParameter("username");
+    var name = getUrlParameter("name");
 
     if(username != ""){
         $("#username").val(username);
     }
     if(name != ""){
         $("#name").val(name);
+        console.log("executed");
     }
 
     function getUrlParameter(sParam)

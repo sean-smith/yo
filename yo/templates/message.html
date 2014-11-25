@@ -3,8 +3,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/bootstrap.css') }}">
-<script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
 <script src="{{ url_for('static', filename='js/jquery.js') }}"></script>
+<script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
 <script src="{{ url_for('static', filename='js/message.js') }}"></script>
 <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/message.css') }}">
 
@@ -18,7 +18,9 @@
     <h2 class="text-center"> Message from {{ data['name'] }}</div> </h2>
 {% endif %}
     <p> {{ data['message'] }} </p>
-    <a href="http://185.56.84.38/?username={{ data['name'] }}&name={{ data['username'] }}" id="reply" type="submit" value="Reply" class="col-centered btn btn-primary text-center">Reply</a>
+    <div class="text-center">
+    <a href="http://185.56.84.38/?username={{ data['name'] }}&name={{ data['username'] }}" id="reply" type="submit" value="Reply" class="col-centered btn btn-primary center text-center">Reply</a>
+</div>
 </div>
 </div>
 </div>
