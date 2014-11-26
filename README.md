@@ -7,4 +7,4 @@ I wanted to make something with Flask and jquery so this is the result.
 
 The site is live here: http://yomessage.me/
 
-![main page][https://raw.githubusercontent.com/sean-smith/yo/master/yo/before.png]
+![alt text](https://raw.githubusercontent.com/sean-smith/yo/master/yo/before.png "main page")
